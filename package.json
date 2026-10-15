@@ -1,6 +1,6 @@
 {
   "name": "@bydtech/honesty-gate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fail the build when placeholder or forbidden copy reaches a rendered page. Reads visible text, not raw markup.",
   "type": "module",
   "exports": {

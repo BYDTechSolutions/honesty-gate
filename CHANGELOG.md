@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-16
+
+### Changed
+
+- Published from GitHub Actions through npm trusted publishing, with a
+  provenance attestation linking the package to this repository. No code changes.
+
 ## [0.1.0] - 2026-10-16
 
 ### Added
@@ -29,5 +36,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `formatResult` and the helpers they use.
 - Examples: an opt-in marketing-claims config, a JSON config, and a sample site.
 
-[Unreleased]: https://github.com/BYDTechSolutions/honesty-gate/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/BYDTechSolutions/honesty-gate/releases/tag/v0.1.0
+[Unreleased]: https://github.com/BYDTechSolutions/honesty-gate/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/BYDTechSolutions/honesty-gate/releases/tag/v0.1.1
+[0.1.0]: https://github.com/BYDTechSolutions/honesty-gate/tree/9082c83f2a819ee9b63a9caf893f4ee4fe1f8da5
