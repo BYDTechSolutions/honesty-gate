@@ -1,0 +1,11 @@
+{
+  "dir": "../dirty",
+  "levels": {
+    "placeholders/bracket": "warn",
+    "placeholders/lorem-ipsum": "warn",
+    "placeholders/todo": "warn",
+    "placeholders/template-syntax": "warn",
+    "placeholders/js-value": "warn",
+    "placeholders/empty-href": "warn"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "dir": "../dirty",
+  "levels": { "placeholders/empty-href": "warn", "placeholders/lorem-ipsum": "off" },
+  "rules": [{ "id": "custom/share", "pattern": "share", "flags": "i", "message": "Share button", "scope": "text", "level": "warn" }]
+}
