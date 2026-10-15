@@ -13,11 +13,13 @@ export default defineConfig({
   // `public` (Hugo), `_site` (Eleventy, Jekyll), `.next/server/app` (Next.js).
   dir: 'out',
 
-  // Plain-text files are checked too: a hand-written llms.txt is the easiest
-  // place for an old promise to survive after the pages dropped it. For a
+  // Hand-written text files are checked too: an llms.txt is the easiest place
+  // for an old promise to survive after the pages dropped it. Name them; do
+  // not include '**/*.txt', because a Next.js static export writes every
+  // page's RSC payload as a .txt file beside it, and that is not copy. For a
   // Next.js server build, prerendered route handlers end in `.body`
-  // (`llms.txt.body`), so add '**/*.txt.body'.
-  include: ['**/*.html', '**/*.txt'],
+  // ('llms.txt.body').
+  include: ['**/*.html', 'llms.txt', 'llms-full.txt'],
 
   // The placeholders preset stays on.
   extends: ['placeholders'],
@@ -36,8 +38,11 @@ export default defineConfig({
     },
     {
       id: 'claims/reply-time',
+      // Adjacent words only: "drafting a reply or updating a record, within
+      // limits" is not a promise, and neither is "the store reviews most
+      // submissions within a day or two".
       pattern:
-        /\b(?:repl(?:y|ies)|respon(?:d|ds|se)|get back to you|hear back)\b[^.!?]{0,30}?\bwithin\b|\bwithin (?:an?|one|two|three|\d+) (?:business |working )?(?:hours?|days?)\b/gi,
+        /\b(?:repl(?:y|ies)|respon(?:d|ds|se)|get back to you) within\b|\bwithin (?:one|two|three|\d+) (?:business|working) days?\b|\bwithin (?:an?|one|two|\d+|twenty-four) hours?\b/gi,
       message: 'A reply-time promise',
     },
     {
@@ -48,10 +53,11 @@ export default defineConfig({
     },
     {
       id: 'claims/timeline',
-      // "4-6 weeks", "3 to 5 months", "Week 1", "in six weeks". Case-sensitive
-      // "Week" so prose like "week after week" passes.
-      pattern:
-        /\b\d+\s?(?:–|-|to)\s?\d+\s?(?:[Ww]eeks?|[Mm]onths?)\b|\bWeeks? \d|\b(?:in|within) (?:\d+|two|three|four|five|six|eight|ten|twelve) (?:weeks?|months?)\b/g,
+      // "4-6 weeks", "3 to 5 months", "Week 1", "in 6 weeks". Case-sensitive
+      // "Week" so prose like "week after week" passes; spelled-out numbers
+      // ("ships in six weeks") are left alone because they turn up in quotes
+      // and stories more often than in promises.
+      pattern: /\b\d+\s?(?:–|-|to)\s?\d+\s?(?:[Ww]eeks?|[Mm]onths?)\b|\bWeeks? \d|\b(?:in|within) \d+ (?:weeks?|months?)\b/g,
       message: 'A timeline',
     },
   ],

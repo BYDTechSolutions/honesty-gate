@@ -118,7 +118,12 @@ describe('examples/marketing-claims.config.mjs', () => {
     expect(hit('From $5k, or €900, or 400 USD.')).toEqual(['claims/price', 'claims/price', 'claims/price']);
     expect(hit('Ships in 4-6 weeks.')).toEqual(['claims/timeline']);
     expect(hit('Week 1: discovery.')).toEqual(['claims/timeline']);
-    expect(hit('Launch in six weeks.')).toEqual(['claims/timeline']);
+    expect(hit('Launch in 6 weeks.')).toEqual(['claims/timeline']);
     expect(hit('Calls Monday to Friday, around your working day. A 30-minute call. Week after week, we ship.')).toEqual([]);
+    // Real copy that an earlier, looser version flagged.
+    expect(hit('Drafting a reply or updating a record, within limits you set.')).toEqual([]);
+    expect(hit('The store reviews most submissions within a day or two.')).toEqual([]);
+    expect(hit('The client shapes the response, within the schema.')).toEqual([]);
+    expect(hit('The product ships in six weeks, and our site still says coming soon.')).toEqual([]);
   });
 });

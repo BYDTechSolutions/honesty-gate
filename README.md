@@ -148,7 +148,7 @@ import { defineConfig } from '@bydtech/honesty-gate';
 
 export default defineConfig({
   dir: 'out',
-  include: ['**/*.html', '**/*.txt'],
+  include: ['**/*.html', 'llms.txt'],
   levels: { 'placeholders/empty-href': 'warn' },
   rules: [
     {
@@ -192,7 +192,7 @@ Scopes:
 - **`raw`**: the file exactly as written, scripts included. Use it for problems that live in markup (`href="#"`) or for content that reaches the browser without being painted, such as a record serialized into a hydration payload.
 - **`all`**: `text` and `attr`. It does not include `raw`, which contains the text again and would report every hit twice.
 
-Files that are not `.html`, `.htm` or `.xhtml` (an `llms.txt` you added to `include`, say) are read as plain text: the whole file is both `text` and `raw`, and there are no attributes.
+Files that are not `.html`, `.htm` or `.xhtml` (an `llms.txt` you added to `include`, say) are read as plain text: the whole file is both `text` and `raw`, and there are no attributes. Name such files rather than including `**/*.txt`: a Next.js static export writes each page's RSC payload as a `.txt` file next to it, and that payload is not copy.
 
 ### The `placeholders` preset
 
