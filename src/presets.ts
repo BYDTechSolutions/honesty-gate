@@ -18,7 +18,7 @@ import type { PresetName, Rule } from './types.js';
 export const placeholders: readonly Rule[] = Object.freeze([
   {
     id: 'placeholders/bracket',
-    pattern: /(?<![\p{L}\p{N}_\])])\[(?!sic\])(?:[A-Z]|\p{L}[^[\]\n]{1,60})\](?![([])/gu,
+    pattern: /(?<![\p{L}\p{N}_\])])\[(?!sic\]|object Object\])(?:[A-Z]|\p{L}[^[\]\n]{1,60})\](?![([])/gu,
     message: 'Unresolved [placeholder] in the copy',
     scope: 'all',
     level: 'error',

@@ -59,6 +59,11 @@ const NAMED_ENTITIES: Record<string, string> = {
   oacute: 'ó', uacute: 'ú', agrave: 'à', egrave: 'è', ntilde: 'ñ',
   ccedil: 'ç', auml: 'ä', ouml: 'ö', uuml: 'ü', Auml: 'Ä', Ouml: 'Ö',
   Uuml: 'Ü', Eacute: 'É', check: '✓', star: '☆', hearts: '♥',
+  // Punctuation a template might encode, and a rule might look for.
+  lbrack: '[', rbrack: ']', lsqb: '[', rsqb: ']', lcub: '{', rcub: '}', lbrace: '{', rbrace: '}',
+  lpar: '(', rpar: ')', dollar: '$', num: '#', percnt: '%', ast: '*', commat: '@', lowbar: '_',
+  verbar: '|', vert: '|', colon: ':', semi: ';', comma: ',', period: '.', sol: '/', bsol: '\\',
+  excl: '!', quest: '?', equals: '=', plus: '+', grave: '`', Hat: '^', tilde: '˜',
 };
 
 /**
