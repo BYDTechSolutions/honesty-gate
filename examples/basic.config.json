@@ -1,0 +1,23 @@
+{
+  "dir": "dist",
+  "include": ["**/*.html"],
+  "exclude": ["**/node_modules/**", "admin/**"],
+  "levels": {
+    "placeholders/empty-href": "warn"
+  },
+  "rules": [
+    {
+      "id": "copy/staging-domain",
+      "pattern": "staging\\.example\\.com",
+      "message": "A link or mention of the staging domain",
+      "scope": ["text", "attr"]
+    },
+    {
+      "id": "copy/old-product-name",
+      "pattern": "\\bWidgetly\\b",
+      "flags": "i",
+      "message": "The product's old name",
+      "level": "warn"
+    }
+  ]
+}

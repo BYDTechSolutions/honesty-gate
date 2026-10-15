@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Example Studio</title>
+  <meta name="description" content="A small studio that designs and builds web apps.">
+  <script>
+    // Brackets, "undefined" and a price in a script are not copy: none of this is reported.
+    document.querySelectorAll('[data-reveal]').forEach((el) => { el.dataset.price = '$5'; el.title ??= undefined; });
+  </script>
+</head>
+<body>
+  <h1>We design and build web apps.</h1>
+  <p>Every project starts with a 30-minute call. You talk to the people who build it.</p>
+  <p>Most projects ship in 4-6 weeks, and we send daily updates.</p>
+  <p>Contact us at [email address].</p>
+  <a href="/services/">Services</a>
+</body>
+</html>
