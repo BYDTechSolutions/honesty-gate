@@ -1,0 +1,63 @@
+{
+  "name": "@bydtech/honesty-gate",
+  "version": "0.1.0",
+  "description": "Fail the build when placeholder or forbidden copy reaches a rendered page. Reads visible text, not raw markup.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "honesty-gate": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "build",
+    "ci",
+    "lint",
+    "html",
+    "static-site",
+    "placeholder",
+    "copy",
+    "content",
+    "nextjs",
+    "astro",
+    "hugo",
+    "quality-gate"
+  ],
+  "author": "BYD Tech <sales.bydtech@gmail.com> (https://bydtech.in)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BYDTechSolutions/honesty-gate.git"
+  },
+  "homepage": "https://github.com/BYDTechSolutions/honesty-gate#readme",
+  "bugs": {
+    "url": "https://github.com/BYDTechSolutions/honesty-gate/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.12"
+  }
+}
